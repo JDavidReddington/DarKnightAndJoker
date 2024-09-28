@@ -33,5 +33,5 @@ export class AppComponent implements OnInit {
     );
   }
 
-  title = 'darknightandjoker.client';
+  title = 'darknight.client';
 }

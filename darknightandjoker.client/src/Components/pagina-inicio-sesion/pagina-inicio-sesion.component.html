@@ -1,0 +1,44 @@
+<div class="component-background">
+  <div class="form-frame">
+
+    <!-- Formulario de Registro -->
+    <form *ngIf="isRegistering; else loginTemplate" [formGroup]="form" (ngSubmit)="guardarUsuario()" class="form-container">
+      <h2>Registrarse</h2>
+      <div class="mb-3">
+        <input type="text" formControlName="userNameDark" class="form-control input-sm" placeholder="Nombre de Usuario">
+      </div>
+      <div class="mb-3">
+        <input type="email" formControlName="emailDark" class="form-control input-sm" placeholder="Correo">
+      </div>
+      <div class="mb-3">
+        <input type="password" formControlName="passworDark" class="form-control input-sm" placeholder="Contraseña">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
+
+      <!-- Leyenda para ir a Iniciar Sesión -->
+      <div class="text-center mt-3">
+        <span>¿Ya tienes una cuenta? <a (click)="toggleForm()" class="text-link">Ingresar</a></span>
+      </div>
+    </form>
+
+    <!-- Formulario de Inicio de Sesión -->
+    <ng-template #loginTemplate>
+      <form [formGroup]="form" (ngSubmit)="iniciarSesion()" class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <div class="mb-3">
+          <input type="email" formControlName="emailDark" class="form-control input-sm" placeholder="Correo">
+        </div>
+        <div class="mb-3">
+          <input type="password" formControlName="passworDark" class="form-control input-sm" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="btn btn-success">Ingresar</button>
+
+        <!-- Leyenda para ir a Registrarse -->
+        <div class="text-center mt-3">
+          <span>¿No tienes una cuenta? <a (click)="toggleForm()" class="text-link">Registrarse</a></span>
+        </div>
+      </form>
+    </ng-template>
+
+  </div>
+</div>
