@@ -1,0 +1,64 @@
+# Excluir archivos de Visual Studio
+.vs/
+
+# Archivos generados por compilaciones
+bin/
+obj/
+
+# Archivos de usuario de Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Paquetes NuGet
+*.nupkg
+**/packages/
+
+# Archivos generados por NuGet y MSBuild
+*.csproj.nuget.dgspec.json
+project.assets.json
+project.nuget.cache
+.Server.csproj.nuget.dgspec.json
+
+# Carpetas de publicación/implementación
+app.publish/
+*.publishsettings
+
+# Archivos temporales
+*.tmp
+*.cache
+*.bak
+
+# Configuraciones locales
+launchSettings.json
+
+# Archivos de lock o de control de versiones
+*.lock
+*.DS_Store
+Thumbs.db
+
+# Archivos de dependencias de Node.js
+node_modules/
+
+# Archivos de configuración de Angular
+dist/
+*.ngsummary.json
+*.js.map
+
+# Archivos de cobertura de pruebas
+coverage/
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Archivos de AssemblyInfo generados
+*.AssemblyInfo.cs
+*.AssemblyInfoInputs.cache
+*.assets.cache
+.GeneratedMSBuildEditorConfig.editorconfig
+spa.proxy.json

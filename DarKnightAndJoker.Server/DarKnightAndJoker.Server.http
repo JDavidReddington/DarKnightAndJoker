@@ -1,0 +1,6 @@
+@DarKnightAndJoker.Server_HostAddress = http://localhost:5278
+
+GET {{DarKnightAndJoker.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
