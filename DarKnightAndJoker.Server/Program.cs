@@ -1,4 +1,7 @@
 
+using DarKnightAndJoker.Server.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DarKnightAndJoker.Server
 {
     public class Program
@@ -14,6 +17,17 @@ namespace DarKnightAndJoker.Server
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            var configuration = builder.Configuration;
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<DarKnightDbContext>(options =>
+            options.UseSqlServer(connectionString));
+
+            builder.Services.AddCors(options => options.AddPolicy("AllowWebApp", builder =>
+            builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()));
+
             var app = builder.Build();
 
             app.UseDefaultFiles();
@@ -25,6 +39,8 @@ namespace DarKnightAndJoker.Server
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("AllowWebApp");
 
             app.UseHttpsRedirection();
 
